@@ -1,0 +1,19 @@
+<h1>Ngx Translate Filters</h1>
+
+<h3>Current locale from ngx-translate is <u>{{ currentLocaleNgx$ | async }}</u>.</h3>
+<h3>Current locale from Angular locale is <u>{{ currentLocaleNg }}</u>.</h3>
+
+<div>
+  Select locale:
+
+  <form [formGroup]="form" (submit)="saveForm(form)">
+    <select formControlName="formLang">
+      <option *ngFor="let lang of languageChoices" [ngValue]="lang">{{ lang }}</option>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<h3>With NgxDatePipe, today is: {{ today | ngxDate: 'longDate' | async }}</h3>
+<h3>With DatePipe, today is: {{ today | date: 'longDate' }}</h3>
